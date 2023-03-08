@@ -1,0 +1,170 @@
+	.file	"01passingparameters.cc"
+	.text
+.lcomm _ZStL8__ioinit,1,1
+	.globl	_Z10rect2polarddRdS_
+	.def	_Z10rect2polarddRdS_;	.scl	2;	.type	32;	.endef
+	.seh_proc	_Z10rect2polarddRdS_
+_Z10rect2polarddRdS_:
+.LFB2419:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movsd	%xmm0, 16(%rbp)
+	movsd	%xmm1, 24(%rbp)
+	movq	%r8, 32(%rbp)
+	movq	%r9, 40(%rbp)
+	movsd	16(%rbp), %xmm0
+	movapd	%xmm0, %xmm1
+	mulsd	%xmm0, %xmm1
+	movsd	24(%rbp), %xmm0
+	mulsd	%xmm0, %xmm0
+	addsd	%xmm0, %xmm1
+	movq	%xmm1, %rax
+	movq	%rax, %xmm0
+	call	sqrt
+	movq	%xmm0, %rax
+	movq	32(%rbp), %rdx
+	movq	%rax, (%rdx)
+	movsd	16(%rbp), %xmm0
+	movq	24(%rbp), %rax
+	movapd	%xmm0, %xmm1
+	movq	%rax, %xmm0
+	call	atan2
+	movq	%xmm0, %rax
+	movq	40(%rbp), %rdx
+	movq	%rax, (%rdx)
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	__main;	.scl	2;	.type	32;	.endef
+	.globl	main
+	.def	main;	.scl	2;	.type	32;	.endef
+	.seh_proc	main
+main:
+.LFB2420:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$80, %rsp
+	.seh_stackalloc	80
+	.seh_endprologue
+	call	__main
+	movl	$3, %edx
+	movl	$2, %ecx
+	call	_Z1fii
+	movl	%eax, -4(%rbp)
+	movl	$6, %edx
+	movl	$5, %ecx
+	call	_Z1gyy
+	movq	%rax, -16(%rbp)
+	movq	$5, 32(%rsp)
+	movl	$4, %r9d
+	movl	$3, %r8d
+	movl	$2, %edx
+	movl	$1, %ecx
+	call	_Z1hyyyyy
+	movq	%rax, -16(%rbp)
+	movsd	.LC0(%rip), %xmm0
+	movsd	%xmm0, -24(%rbp)
+	movsd	.LC1(%rip), %xmm0
+	movsd	%xmm0, -32(%rbp)
+	movl	$0, %eax
+	addq	$80, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	__tcf_0;	.scl	3;	.type	32;	.endef
+	.seh_proc	__tcf_0
+__tcf_0:
+.LFB3095:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	leaq	_ZStL8__ioinit(%rip), %rax
+	movq	%rax, %rcx
+	call	_ZNSt8ios_base4InitD1Ev
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	_Z41__static_initialization_and_destruction_0ii;	.scl	3;	.type	32;	.endef
+	.seh_proc	_Z41__static_initialization_and_destruction_0ii
+_Z41__static_initialization_and_destruction_0ii:
+.LFB3094:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movl	%ecx, 16(%rbp)
+	movl	%edx, 24(%rbp)
+	cmpl	$1, 16(%rbp)
+	jne	.L7
+	cmpl	$65535, 24(%rbp)
+	jne	.L7
+	leaq	_ZStL8__ioinit(%rip), %rax
+	movq	%rax, %rcx
+	call	_ZNSt8ios_base4InitC1Ev
+	leaq	__tcf_0(%rip), %rax
+	movq	%rax, %rcx
+	call	atexit
+.L7:
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	_GLOBAL__sub_I__Z10rect2polarddRdS_;	.scl	3;	.type	32;	.endef
+	.seh_proc	_GLOBAL__sub_I__Z10rect2polarddRdS_
+_GLOBAL__sub_I__Z10rect2polarddRdS_:
+.LFB3096:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movl	$65535, %edx
+	movl	$1, %ecx
+	call	_Z41__static_initialization_and_destruction_0ii
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section	.ctors,"w"
+	.align 8
+	.quad	_GLOBAL__sub_I__Z10rect2polarddRdS_
+	.section .rdata,"dr"
+	.align 8
+.LC0:
+	.long	0
+	.long	1074266112
+	.align 8
+.LC1:
+	.long	0
+	.long	1074790400
+	.ident	"GCC: (Rev6, Built by MSYS2 project) 12.2.0"
+	.def	sqrt;	.scl	2;	.type	32;	.endef
+	.def	atan2;	.scl	2;	.type	32;	.endef
+	.def	_Z1fii;	.scl	2;	.type	32;	.endef
+	.def	_Z1gyy;	.scl	2;	.type	32;	.endef
+	.def	_Z1hyyyyy;	.scl	2;	.type	32;	.endef
+	.def	_ZNSt8ios_base4InitD1Ev;	.scl	2;	.type	32;	.endef
+	.def	_ZNSt8ios_base4InitC1Ev;	.scl	2;	.type	32;	.endef
+	.def	atexit;	.scl	2;	.type	32;	.endef

@@ -1,0 +1,8 @@
+assume intel instructtion gives clock cycle #
+
+uint64_t t0 = givemeclock(); //t0 = 5000
+imul %rcx, %rdx
+ANOTHER INSTRUCTION HERE
+uint64_t t1 = givemeclock(); //t1 = 5001
+
+t1-t0

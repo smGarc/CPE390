@@ -1,0 +1,98 @@
+Question 1:
+[Thread 1820.0x2d4c exited with code 6]                                              
+[Inferior 1 (process 1820) exited with code 06] 
+
+Question 2:
+ni
+mov $5, %rax	mov $7, %rbx	mov $9, %rcx
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9
+ni
+lea (%rax, %rbx), %rdx
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9		rdx	0xc	12
+ni
+mov %rax, %rsi
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9		rdx	0xc	12
+rsi	0x5	5
+ni
+mul %rcx
+rax	0x2d	45		rbx	0x7	7
+rcx	0x9	9		rdx	0x0	0
+rsi	0x5	5
+ni
+xchg %rax, %rsi
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9		rdx	0x0	0
+rsi	0x2d	45
+ni
+mov %rbx, %rdi
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9		rdx	0x0	0
+rsi	0x2d	45		rdi	0x7	7
+ni
+sub %rax, %rdi
+rax	0x5	5		rbx	0x7	7
+rcx	0x9	9		rdx	0x0	0
+rsi	0x2d	45		rdi	0x2	2
+ni
+mov %rsi, %rax
+rax	0x2d	45		rbx	0x7	7
+rcx	0x9	9		rdx	0x0	0
+rsi	0x2d	45		rdi	0x2	2
+ni
+mov %rdi, %rcx
+rax	0x2d	45		rbx	0x7	7
+rcx	0x2	2		rdx	0x0	0
+rsi	0x2d	45		rdi	0x2	2
+ni
+div %rcx
+rax	0x16	22		rbx	0x7	7
+rcx	0x2	2		rdx	0x1	1
+rsi	0x2d	45		rdi	0x2	2
+ni
+ret
+
+Question 4:
+ni
+mov $0xdeadbeef12345678, %rax	mov $7, %rbx	mov $9, %rcx
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+ni
+mov %rbx, %rcx
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0xabbaf0bb0bb398d1
+ni  
+and %rax, %rcx
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0x8aa8b0ab02341050
+ni
+mov %rbx, %rdx
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0x8aa8b0ab02341050
+rdx	0xabbaf0bb0bb398d1
+ni
+or %rax, %rdx
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0x8aa8b0ab02341050
+rdx	0xffbffeff1bbedef9
+ni
+mov %rbx, %rsi
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0x8aa8b0ab02341050
+rdx	0xffbffeff1bbedef9
+rsi	0xabbaf0bb0bb398d1
+ni
+xor %rax, %rsi
+rax	0xdeadbeef12345678		
+rbx	0xabbaf0bb0bb398d1
+rcx	0x8aa8b0ab02341050
+rdx	0xffbffeff1bbedef9
+rsi	0x75174e54198acea9
+ret
